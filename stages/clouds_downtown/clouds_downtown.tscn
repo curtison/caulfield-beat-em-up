@@ -1,69 +1,22 @@
-[gd_scene load_steps=51 format=3 uid="uid://ceoxy8jmju5uq"]
+[gd_scene load_steps=38 format=3 uid="uid://ceoxy8jmju5uq"]
 
 [ext_resource type="PackedScene" path="res://stages/_base/base_stage_caulfield.tscn" id="1_4lqd3"]
 [ext_resource type="Script" path="res://stages/clouds_downtown/clouds_downtown.gd" id="2_08exp"]
 [ext_resource type="Script" path="res://stages/stage_01/day_cycle_modulate.gd" id="3_uswky"]
 [ext_resource type="Resource" uid="uid://cf424fk4f5263" path="res://stages/_base/day_cycle_data.tres" id="4_y5lul"]
-[ext_resource type="Shader" path="res://stages/_base/skyboxes/gradient_map.gdshader" id="5_iqlbw"]
 [ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/tax_man_area/brick_gate/dirty_brick_wall_gate.tscn" id="10_nq7xs"]
-[ext_resource type="Shader" path="res://stages/stage_01/hard_light.gdshader" id="10_yubb3"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_fight_room.gd" id="17_cjfi2"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/enemy_spawner/quiver_enemy_spawner.gd" id="18_5ae2i"]
 [ext_resource type="PackedScene" uid="uid://2jhcwfmlrylb" path="res://characters/enemies/sargent/sarge.tscn" id="19_etsee"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/quiver_player_detector.gd" id="21_ge31n"]
-[ext_resource type="Shader" path="res://characters/enemies/tax_man/resources/silhouette.gdshader" id="36_84oqi"]
 [ext_resource type="PackedScene" uid="uid://dwgxqe6h48x4e" path="res://characters/enemies/tax_man/tax_man.tscn" id="59_jn7co"]
 [ext_resource type="PackedScene" path="res://stages/stage_01/stage_elements/tax_man_area/tax_man_throne.tscn" id="60_60ghw"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/combat/collision_areas/quiver_wall_hit_box.gd" id="62_je6pb"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/combat/quiver_attack_data.gd" id="63_6am3i"]
 [ext_resource type="Script" path="res://addons/quiver.beat_em_up/utilities/custom_nodes/enemy_spawner/quiver_spawn_data.gd" id="70_we574"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fe6v1"]
-shader = ExtResource("10_yubb3")
-
-[sub_resource type="Gradient" id="Gradient_q1rff"]
-offsets = PackedFloat32Array(0, 0.379538, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.884488, 0.884488, 0.884488, 1, 0.0976562, 0.0976562, 0.0976562, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rxt3w"]
-gradient = SubResource("Gradient_q1rff")
-width = 1400
-height = 500
-fill = 1
-fill_from = Vector2(0.603352, 0.349693)
-fill_to = Vector2(0, 0.475798)
-
-[sub_resource type="Gradient" id="Gradient_ox0v2"]
-resource_local_to_scene = true
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.268817, 0.575269, 0.854839)
-colors = PackedColorArray(0.0823529, 0.027451, 0.027451, 1, 0.505882, 0.137255, 0.121569, 1, 0.596078, 0.313726, 0.188235, 1, 0.745098, 0.572549, 0.411765, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1i8g6"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_ox0v2")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jq4kj"]
-shader = ExtResource("5_iqlbw")
-shader_parameter/is_active = true
-shader_parameter/show_grayscale = false
-shader_parameter/gradient = SubResource("GradientTexture1D_1i8g6")
-
-[sub_resource type="Gradient" id="Gradient_01a75"]
-resource_local_to_scene = true
-interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.268817, 0.575269, 0.854839)
-colors = PackedColorArray(0.0392157, 0.027451, 0.14902, 1, 0.243137, 0.227451, 0.34902, 1, 0.380392, 0.368627, 0.486275, 1, 0.631373, 0.619608, 0.737255, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qyibh"]
-resource_local_to_scene = true
-gradient = SubResource("Gradient_01a75")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8ik0"]
-shader = ExtResource("5_iqlbw")
-shader_parameter/is_active = true
-shader_parameter/show_grayscale = false
-shader_parameter/gradient = SubResource("GradientTexture1D_qyibh")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_barc1"]
+size = Vector2(320, 60)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nuxeb"]
 polygon = PackedVector2Array(-30, -1178, 1345, 185, 125, 193, -47, 202)
@@ -86,11 +39,6 @@ launch_angle = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajt63"]
 size = Vector2(124, 1688)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_juikt"]
-shader = ExtResource("36_84oqi")
-shader_parameter/color = Color(0.0313726, 0, 0.0666667, 1)
-shader_parameter/effect_strength = 0.9
 
 [sub_resource type="Resource" id="Resource_r2otu"]
 script = ExtResource("70_we574")
@@ -207,9 +155,6 @@ use_spawner_position = false
 use_vector2 = false
 target_node_path = NodePath("../GuardPos2")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_barc1"]
-size = Vector2(320, 60)
-
 [node name="CloudsDowntown" instance=ExtResource("1_4lqd3")]
 script = ExtResource("2_08exp")
 metadata/_edit_horizontal_guides_ = [791.0]
@@ -226,354 +171,354 @@ _color_night = Color(0.82, 0.86, 1, 1)
 [node name="SkyboxLayer" parent="Background" index="0"]
 follow_viewport_enabled = false
 
-[node name="SkyBase" type="ColorRect" parent="Background"]
+[node name="SkyBase" type="ColorRect" parent="Background" index="1"]
 offset_left = -600.0
 offset_top = -2000.0
 offset_right = 16600.0
 offset_bottom = 660.0
 color = Color(0.07, 0.08, 0.13, 1)
 
-[node name="SkyHorizonGlow" type="ColorRect" parent="Background"]
+[node name="SkyHorizonGlow" type="ColorRect" parent="Background" index="2"]
 offset_left = -600.0
 offset_top = -180.0
 offset_right = 16600.0
 offset_bottom = 620.0
 color = Color(0.17, 0.12, 0.17, 0.5)
 
-[node name="Cloud1" type="Polygon2D" parent="Background"]
+[node name="Cloud1" type="Polygon2D" parent="Background" index="3"]
 position = Vector2(1200, -1050)
 scale = Vector2(1.4, 1)
 color = Color(0.13, 0.14, 0.19, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud2" type="Polygon2D" parent="Background"]
+[node name="Cloud2" type="Polygon2D" parent="Background" index="4"]
 position = Vector2(3600, -1250)
 scale = Vector2(1.8, 1.1)
 color = Color(0.1, 0.11, 0.16, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud3" type="Polygon2D" parent="Background"]
+[node name="Cloud3" type="Polygon2D" parent="Background" index="5"]
 position = Vector2(5600, -950)
 scale = Vector2(1.5, 0.9)
 color = Color(0.16, 0.17, 0.22, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud4" type="Polygon2D" parent="Background"]
+[node name="Cloud4" type="Polygon2D" parent="Background" index="6"]
 position = Vector2(8200, -1200)
 scale = Vector2(2, 1.2)
 color = Color(0.11, 0.12, 0.17, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud5" type="Polygon2D" parent="Background"]
+[node name="Cloud5" type="Polygon2D" parent="Background" index="7"]
 position = Vector2(10500, -1000)
 scale = Vector2(1.6, 1)
 color = Color(0.14, 0.15, 0.2, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud6" type="Polygon2D" parent="Background"]
+[node name="Cloud6" type="Polygon2D" parent="Background" index="8"]
 position = Vector2(13000, -1250)
 scale = Vector2(1.9, 1.1)
 color = Color(0.1, 0.11, 0.16, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud7" type="Polygon2D" parent="Background"]
+[node name="Cloud7" type="Polygon2D" parent="Background" index="9"]
 position = Vector2(15200, -980)
 scale = Vector2(1.5, 0.95)
 color = Color(0.15, 0.16, 0.21, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Cloud8" type="Polygon2D" parent="Background"]
+[node name="Cloud8" type="Polygon2D" parent="Background" index="10"]
 position = Vector2(600, -1320)
 scale = Vector2(1.7, 1.05)
 color = Color(0.12, 0.13, 0.18, 1)
 polygon = PackedVector2Array(-520, 20, -380, -60, -200, -90, -40, -70, 120, -95, 300, -60, 460, -15, 520, 25, 380, 70, 180, 85, -60, 80, -300, 75, -460, 55)
 
-[node name="Skyline1" type="ColorRect" parent="Background"]
+[node name="Skyline1" type="ColorRect" parent="Background" index="11"]
 offset_left = 300.0
 offset_top = -350.0
 offset_right = 1500.0
 offset_bottom = 560.0
 color = Color(0.05, 0.05, 0.09, 1)
 
-[node name="Skyline2" type="ColorRect" parent="Background"]
+[node name="Skyline2" type="ColorRect" parent="Background" index="12"]
 offset_left = 2200.0
 offset_top = -480.0
 offset_right = 3600.0
 offset_bottom = 560.0
 color = Color(0.05, 0.05, 0.09, 1)
 
-[node name="Skyline3" type="ColorRect" parent="Background"]
+[node name="Skyline3" type="ColorRect" parent="Background" index="13"]
 offset_left = 4800.0
 offset_top = -300.0
 offset_right = 6200.0
 offset_bottom = 560.0
 color = Color(0.05, 0.05, 0.09, 1)
 
-[node name="Skyline4" type="ColorRect" parent="Background"]
+[node name="Skyline4" type="ColorRect" parent="Background" index="14"]
 offset_left = 7000.0
 offset_top = -520.0
 offset_right = 8600.0
 offset_bottom = 560.0
 color = Color(0.05, 0.05, 0.09, 1)
 
-[node name="Skyline5" type="ColorRect" parent="Background"]
+[node name="Skyline5" type="ColorRect" parent="Background" index="15"]
 offset_left = 11000.0
 offset_top = -400.0
 offset_right = 13000.0
 offset_bottom = 560.0
 color = Color(0.05, 0.05, 0.09, 1)
 
-[node name="Building1" type="ColorRect" parent="Background"]
+[node name="Building1" type="ColorRect" parent="Background" index="16"]
 offset_left = -600.0
 offset_top = -680.0
 offset_right = 1050.0
 offset_bottom = 565.0
-color = Color(0.2, 0.1, 0.09, 1)
+color = Color(0.29, 0.12, 0.12, 1)
 
-[node name="Building2" type="ColorRect" parent="Background"]
+[node name="Building2" type="ColorRect" parent="Background" index="17"]
 offset_left = 1050.0
 offset_top = -520.0
 offset_right = 2380.0
 offset_bottom = 565.0
-color = Color(0.17, 0.12, 0.1, 1)
+color = Color(0.29, 0.12, 0.11, 1)
 
-[node name="Building3" type="ColorRect" parent="Background"]
+[node name="Building3" type="ColorRect" parent="Background" index="18"]
 offset_left = 2380.0
 offset_top = -760.0
 offset_right = 3720.0
 offset_bottom = 565.0
-color = Color(0.15, 0.08, 0.08, 1)
+color = Color(0.27, 0.1, 0.1, 1)
 
-[node name="Building4" type="ColorRect" parent="Background"]
+[node name="Building4" type="ColorRect" parent="Background" index="19"]
 offset_left = 3720.0
 offset_top = -560.0
 offset_right = 5020.0
 offset_bottom = 565.0
-color = Color(0.18, 0.11, 0.12, 1)
+color = Color(0.3, 0.13, 0.14, 1)
 
-[node name="Building5" type="ColorRect" parent="Background"]
+[node name="Building5" type="ColorRect" parent="Background" index="20"]
 offset_left = 5020.0
 offset_top = -660.0
 offset_right = 6320.0
 offset_bottom = 565.0
-color = Color(0.17, 0.12, 0.1, 1)
+color = Color(0.29, 0.12, 0.11, 1)
 
-[node name="Building6" type="ColorRect" parent="Background"]
+[node name="Building6" type="ColorRect" parent="Background" index="21"]
 offset_left = 6320.0
 offset_top = -500.0
 offset_right = 7620.0
 offset_bottom = 565.0
-color = Color(0.2, 0.1, 0.09, 1)
+color = Color(0.29, 0.12, 0.12, 1)
 
-[node name="Building7" type="ColorRect" parent="Background"]
+[node name="Building7" type="ColorRect" parent="Background" index="22"]
 offset_left = 7620.0
 offset_top = -720.0
 offset_right = 8900.0
 offset_bottom = 565.0
-color = Color(0.15, 0.08, 0.08, 1)
+color = Color(0.27, 0.1, 0.1, 1)
 
-[node name="TheatreBuilding" type="ColorRect" parent="Background"]
+[node name="TheatreBuilding" type="ColorRect" parent="Background" index="23"]
 offset_left = 9000.0
 offset_top = -900.0
 offset_right = 9980.0
 offset_bottom = 565.0
-color = Color(0.16, 0.09, 0.1, 1)
+color = Color(0.28, 0.11, 0.12, 1)
 
-[node name="Building9" type="ColorRect" parent="Background"]
+[node name="Building9" type="ColorRect" parent="Background" index="24"]
 offset_left = 9980.0
 offset_top = -560.0
 offset_right = 10600.0
 offset_bottom = 565.0
-color = Color(0.17, 0.12, 0.1, 1)
+color = Color(0.29, 0.12, 0.11, 1)
 
-[node name="BossBackWall" type="ColorRect" parent="Background"]
+[node name="BossBackWall" type="ColorRect" parent="Background" index="25"]
 offset_left = 10600.0
 offset_top = -780.0
 offset_right = 16600.0
 offset_bottom = 565.0
-color = Color(0.12, 0.07, 0.08, 1)
+color = Color(0.22, 0.1, 0.11, 1)
 
-[node name="GroundFloorShadow" type="ColorRect" parent="Background"]
+[node name="GroundFloorShadow" type="ColorRect" parent="Background" index="26"]
 offset_left = -600.0
 offset_top = 360.0
 offset_right = 16600.0
 offset_bottom = 565.0
 color = Color(0.09, 0.05, 0.06, 0.6)
 
-[node name="BossColumn1" type="ColorRect" parent="Background"]
+[node name="BossColumn1" type="ColorRect" parent="Background" index="27"]
 offset_left = 11450.0
 offset_top = -700.0
 offset_right = 11580.0
 offset_bottom = 560.0
-color = Color(0.09, 0.05, 0.06, 1)
+color = Color(0.15, 0.08, 0.09, 1)
 
-[node name="BossColumn2" type="ColorRect" parent="Background"]
+[node name="BossColumn2" type="ColorRect" parent="Background" index="28"]
 offset_left = 12900.0
 offset_top = -700.0
 offset_right = 13030.0
 offset_bottom = 560.0
-color = Color(0.09, 0.05, 0.06, 1)
+color = Color(0.15, 0.08, 0.09, 1)
 
-[node name="BossColumn3" type="ColorRect" parent="Background"]
+[node name="BossColumn3" type="ColorRect" parent="Background" index="29"]
 offset_left = 14600.0
 offset_top = -700.0
 offset_right = 14730.0
 offset_bottom = 560.0
-color = Color(0.09, 0.05, 0.06, 1)
+color = Color(0.15, 0.08, 0.09, 1)
 
-[node name="Win1Dark" type="ColorRect" parent="Background"]
+[node name="Win1Dark" type="ColorRect" parent="Background" index="30"]
 offset_left = -200.0
 offset_top = -380.0
 offset_right = 900.0
 offset_bottom = -240.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win1Lit" type="ColorRect" parent="Background"]
+[node name="Win1Lit" type="ColorRect" parent="Background" index="31"]
 offset_left = 250.0
 offset_top = -370.0
 offset_right = 330.0
 offset_bottom = -260.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win2Dark" type="ColorRect" parent="Background"]
+[node name="Win2Dark" type="ColorRect" parent="Background" index="32"]
 offset_left = 1150.0
 offset_top = -300.0
 offset_right = 2280.0
 offset_bottom = -180.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win2Lit" type="ColorRect" parent="Background"]
+[node name="Win2Lit" type="ColorRect" parent="Background" index="33"]
 offset_left = 1500.0
 offset_top = -290.0
 offset_right = 1580.0
 offset_bottom = -200.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win3Dark" type="ColorRect" parent="Background"]
+[node name="Win3Dark" type="ColorRect" parent="Background" index="34"]
 offset_left = 2480.0
 offset_top = -420.0
 offset_right = 3620.0
 offset_bottom = -280.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win3LitA" type="ColorRect" parent="Background"]
+[node name="Win3LitA" type="ColorRect" parent="Background" index="35"]
 offset_left = 2700.0
 offset_top = -410.0
 offset_right = 2780.0
 offset_bottom = -300.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win3LitB" type="ColorRect" parent="Background"]
+[node name="Win3LitB" type="ColorRect" parent="Background" index="36"]
 offset_left = 3300.0
 offset_top = -410.0
 offset_right = 3380.0
 offset_bottom = -300.0
-color = Color(1, 0.68, 0.3, 0.85)
+color = Color(1, 0.82, 0.45, 1)
 
-[node name="Win4Dark" type="ColorRect" parent="Background"]
+[node name="Win4Dark" type="ColorRect" parent="Background" index="37"]
 offset_left = 3820.0
 offset_top = -340.0
 offset_right = 4920.0
 offset_bottom = -220.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win4Lit" type="ColorRect" parent="Background"]
+[node name="Win4Lit" type="ColorRect" parent="Background" index="38"]
 offset_left = 4250.0
 offset_top = -330.0
 offset_right = 4330.0
 offset_bottom = -240.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win5Dark" type="ColorRect" parent="Background"]
+[node name="Win5Dark" type="ColorRect" parent="Background" index="39"]
 offset_left = 5120.0
 offset_top = -400.0
 offset_right = 6220.0
 offset_bottom = -260.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win5Lit" type="ColorRect" parent="Background"]
+[node name="Win5Lit" type="ColorRect" parent="Background" index="40"]
 offset_left = 5600.0
 offset_top = -390.0
 offset_right = 5680.0
 offset_bottom = -280.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win6Dark" type="ColorRect" parent="Background"]
+[node name="Win6Dark" type="ColorRect" parent="Background" index="41"]
 offset_left = 6420.0
 offset_top = -300.0
 offset_right = 7520.0
 offset_bottom = -180.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win6Lit" type="ColorRect" parent="Background"]
+[node name="Win6Lit" type="ColorRect" parent="Background" index="42"]
 offset_left = 6850.0
 offset_top = -290.0
 offset_right = 6930.0
 offset_bottom = -200.0
-color = Color(1, 0.7, 0.32, 0.88)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win7Dark" type="ColorRect" parent="Background"]
+[node name="Win7Dark" type="ColorRect" parent="Background" index="43"]
 offset_left = 7720.0
 offset_top = -420.0
 offset_right = 8820.0
 offset_bottom = -280.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="Win7LitA" type="ColorRect" parent="Background"]
+[node name="Win7LitA" type="ColorRect" parent="Background" index="44"]
 offset_left = 8000.0
 offset_top = -410.0
 offset_right = 8080.0
 offset_bottom = -300.0
-color = Color(1, 0.74, 0.34, 0.9)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="Win7LitB" type="ColorRect" parent="Background"]
+[node name="Win7LitB" type="ColorRect" parent="Background" index="45"]
 offset_left = 8500.0
 offset_top = -410.0
 offset_right = 8580.0
 offset_bottom = -300.0
-color = Color(1, 0.68, 0.3, 0.85)
+color = Color(1, 0.82, 0.45, 1)
 
-[node name="TheatreWinDark" type="ColorRect" parent="Background"]
+[node name="TheatreWinDark" type="ColorRect" parent="Background" index="46"]
 offset_left = 9050.0
 offset_top = -560.0
 offset_right = 9930.0
 offset_bottom = -440.0
-color = Color(0.06, 0.08, 0.12, 1)
+color = Color(0.1, 0.13, 0.2, 1)
 
-[node name="TheatreWinLit" type="ColorRect" parent="Background"]
+[node name="TheatreWinLit" type="ColorRect" parent="Background" index="47"]
 offset_left = 9200.0
 offset_top = -550.0
 offset_right = 9300.0
 offset_bottom = -450.0
-color = Color(1, 0.74, 0.34, 0.85)
+color = Color(1, 0.84, 0.48, 1)
 
-[node name="MarqueeGlow" type="ColorRect" parent="Background"]
+[node name="MarqueeGlow" type="ColorRect" parent="Background" index="48"]
 offset_left = 9260.0
 offset_top = -920.0
 offset_right = 9720.0
 offset_bottom = 300.0
-color = Color(1, 0.6, 0.25, 0.1)
+color = Color(1, 0.62, 0.26, 0.32)
 
-[node name="MarqueeBladeFrame" type="ColorRect" parent="Background"]
+[node name="MarqueeBladeFrame" type="ColorRect" parent="Background" index="49"]
 offset_left = 9370.0
 offset_top = -900.0
 offset_right = 9610.0
 offset_bottom = 160.0
-color = Color(0.4, 0.24, 0.1, 1)
+color = Color(0.55, 0.33, 0.12, 1)
 
-[node name="MarqueeBlade" type="ColorRect" parent="Background"]
+[node name="MarqueeBlade" type="ColorRect" parent="Background" index="50"]
 offset_left = 9390.0
 offset_top = -880.0
 offset_right = 9590.0
 offset_bottom = 140.0
-color = Color(0.1, 0.1, 0.13, 1)
+color = Color(0.16, 0.13, 0.06, 1)
 
-[node name="MarqueeBladeText" type="Label" parent="Background"]
+[node name="MarqueeBladeText" type="Label" parent="Background" index="51"]
 offset_left = 9390.0
 offset_top = -870.0
 offset_right = 9590.0
 offset_bottom = 130.0
-theme_override_colors/font_color = Color(1, 0.74, 0.34, 1)
+theme_override_colors/font_color = Color(1, 0.86, 0.5, 1)
 theme_override_font_sizes/font_size = 60
 text = "G
 E
@@ -593,301 +538,301 @@ E"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarqueeBandFrame" type="ColorRect" parent="Background"]
+[node name="MarqueeBandFrame" type="ColorRect" parent="Background" index="52"]
 offset_left = 9010.0
 offset_top = 142.0
 offset_right = 9970.0
 offset_bottom = 280.0
-color = Color(0.4, 0.24, 0.1, 1)
+color = Color(0.55, 0.33, 0.12, 1)
 
-[node name="MarqueeBand" type="ColorRect" parent="Background"]
+[node name="MarqueeBand" type="ColorRect" parent="Background" index="53"]
 offset_left = 9020.0
 offset_top = 150.0
 offset_right = 9960.0
 offset_bottom = 270.0
-color = Color(0.14, 0.11, 0.09, 1)
+color = Color(0.22, 0.17, 0.1, 1)
 
-[node name="MarqueeBandText" type="Label" parent="Background"]
+[node name="MarqueeBandText" type="Label" parent="Background" index="54"]
 offset_left = 9020.0
 offset_top = 165.0
 offset_right = 9960.0
 offset_bottom = 255.0
-theme_override_colors/font_color = Color(1, 0.74, 0.34, 1)
+theme_override_colors/font_color = Color(1, 0.86, 0.5, 1)
 theme_override_font_sizes/font_size = 54
 text = "GEORGIA THEATRE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarqueeBulbs" type="ColorRect" parent="Background"]
+[node name="MarqueeBulbs" type="ColorRect" parent="Background" index="55"]
 offset_left = 9020.0
 offset_top = 272.0
 offset_right = 9960.0
 offset_bottom = 286.0
-color = Color(1, 0.78, 0.4, 0.8)
+color = Color(1, 0.86, 0.52, 1)
 
-[node name="Sidewalk" type="ColorRect" parent="Background"]
+[node name="Sidewalk" type="ColorRect" parent="Background" index="56"]
 offset_left = -600.0
 offset_top = 558.0
 offset_right = 16600.0
 offset_bottom = 662.0
-color = Color(0.12, 0.12, 0.15, 1)
+color = Color(0.17, 0.18, 0.22, 1)
 
-[node name="CurbEdge" type="ColorRect" parent="Background"]
+[node name="CurbEdge" type="ColorRect" parent="Background" index="57"]
 offset_left = -600.0
 offset_top = 558.0
 offset_right = 16600.0
 offset_bottom = 576.0
-color = Color(0.22, 0.22, 0.28, 0.6)
+color = Color(0.28, 0.28, 0.36, 0.72)
 
-[node name="Pavement" type="ColorRect" parent="Background"]
+[node name="Pavement" type="ColorRect" parent="Background" index="58"]
 offset_left = -600.0
 offset_top = 660.0
 offset_right = 16600.0
 offset_bottom = 1320.0
-color = Color(0.05, 0.055, 0.075, 1)
+color = Color(0.08, 0.09, 0.12, 1)
 
-[node name="PavementSheen" type="ColorRect" parent="Background"]
+[node name="PavementSheen" type="ColorRect" parent="Background" index="59"]
 offset_left = -600.0
 offset_top = 940.0
 offset_right = 16600.0
 offset_bottom = 1040.0
-color = Color(0.12, 0.12, 0.17, 0.35)
+color = Color(0.15, 0.17, 0.25, 0.55)
 
-[node name="ThroneBacklight" type="Polygon2D" parent="Background"]
+[node name="ThroneBacklight" type="Polygon2D" parent="Background" index="60"]
 position = Vector2(15600, 740)
 color = Color(0.85, 0.5, 0.3, 0.1)
 polygon = PackedVector2Array(420, 0, 297, 106, 0, 150, -297, 106, -420, 0, -297, -106, 0, -150, 297, -106)
 
-[node name="Lamp1Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp1Pool" type="Polygon2D" parent="Background" index="61"]
 position = Vector2(800, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp1Refl" type="ColorRect" parent="Background"]
+[node name="Lamp1Refl" type="ColorRect" parent="Background" index="62"]
 offset_left = 787.0
 offset_top = 660.0
 offset_right = 813.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp1Pole" type="ColorRect" parent="Background"]
+[node name="Lamp1Pole" type="ColorRect" parent="Background" index="63"]
 offset_left = 789.0
 offset_top = -360.0
 offset_right = 811.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp1Glow" type="ColorRect" parent="Background"]
+[node name="Lamp1Glow" type="ColorRect" parent="Background" index="64"]
 offset_left = 730.0
 offset_top = -420.0
 offset_right = 870.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp1Head" type="ColorRect" parent="Background"]
+[node name="Lamp1Head" type="ColorRect" parent="Background" index="65"]
 offset_left = 758.0
 offset_top = -392.0
 offset_right = 842.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp2Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp2Pool" type="Polygon2D" parent="Background" index="66"]
 position = Vector2(2900, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp2Refl" type="ColorRect" parent="Background"]
+[node name="Lamp2Refl" type="ColorRect" parent="Background" index="67"]
 offset_left = 2887.0
 offset_top = 660.0
 offset_right = 2913.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp2Pole" type="ColorRect" parent="Background"]
+[node name="Lamp2Pole" type="ColorRect" parent="Background" index="68"]
 offset_left = 2889.0
 offset_top = -360.0
 offset_right = 2911.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp2Glow" type="ColorRect" parent="Background"]
+[node name="Lamp2Glow" type="ColorRect" parent="Background" index="69"]
 offset_left = 2830.0
 offset_top = -420.0
 offset_right = 2970.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp2Head" type="ColorRect" parent="Background"]
+[node name="Lamp2Head" type="ColorRect" parent="Background" index="70"]
 offset_left = 2858.0
 offset_top = -392.0
 offset_right = 2942.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp3Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp3Pool" type="Polygon2D" parent="Background" index="71"]
 position = Vector2(5000, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp3Refl" type="ColorRect" parent="Background"]
+[node name="Lamp3Refl" type="ColorRect" parent="Background" index="72"]
 offset_left = 4987.0
 offset_top = 660.0
 offset_right = 5013.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp3Pole" type="ColorRect" parent="Background"]
+[node name="Lamp3Pole" type="ColorRect" parent="Background" index="73"]
 offset_left = 4989.0
 offset_top = -360.0
 offset_right = 5011.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp3Glow" type="ColorRect" parent="Background"]
+[node name="Lamp3Glow" type="ColorRect" parent="Background" index="74"]
 offset_left = 4930.0
 offset_top = -420.0
 offset_right = 5070.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp3Head" type="ColorRect" parent="Background"]
+[node name="Lamp3Head" type="ColorRect" parent="Background" index="75"]
 offset_left = 4958.0
 offset_top = -392.0
 offset_right = 5042.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp4Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp4Pool" type="Polygon2D" parent="Background" index="76"]
 position = Vector2(7100, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp4Refl" type="ColorRect" parent="Background"]
+[node name="Lamp4Refl" type="ColorRect" parent="Background" index="77"]
 offset_left = 7087.0
 offset_top = 660.0
 offset_right = 7113.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp4Pole" type="ColorRect" parent="Background"]
+[node name="Lamp4Pole" type="ColorRect" parent="Background" index="78"]
 offset_left = 7089.0
 offset_top = -360.0
 offset_right = 7111.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp4Glow" type="ColorRect" parent="Background"]
+[node name="Lamp4Glow" type="ColorRect" parent="Background" index="79"]
 offset_left = 7030.0
 offset_top = -420.0
 offset_right = 7170.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp4Head" type="ColorRect" parent="Background"]
+[node name="Lamp4Head" type="ColorRect" parent="Background" index="80"]
 offset_left = 7058.0
 offset_top = -392.0
 offset_right = 7142.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp5Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp5Pool" type="Polygon2D" parent="Background" index="81"]
 position = Vector2(9200, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp5Refl" type="ColorRect" parent="Background"]
+[node name="Lamp5Refl" type="ColorRect" parent="Background" index="82"]
 offset_left = 9187.0
 offset_top = 660.0
 offset_right = 9213.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp5Pole" type="ColorRect" parent="Background"]
+[node name="Lamp5Pole" type="ColorRect" parent="Background" index="83"]
 offset_left = 9189.0
 offset_top = -360.0
 offset_right = 9211.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp5Glow" type="ColorRect" parent="Background"]
+[node name="Lamp5Glow" type="ColorRect" parent="Background" index="84"]
 offset_left = 9130.0
 offset_top = -420.0
 offset_right = 9270.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp5Head" type="ColorRect" parent="Background"]
+[node name="Lamp5Head" type="ColorRect" parent="Background" index="85"]
 offset_left = 9158.0
 offset_top = -392.0
 offset_right = 9242.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp6Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp6Pool" type="Polygon2D" parent="Background" index="86"]
 position = Vector2(11800, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp6Refl" type="ColorRect" parent="Background"]
+[node name="Lamp6Refl" type="ColorRect" parent="Background" index="87"]
 offset_left = 11787.0
 offset_top = 660.0
 offset_right = 11813.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp6Pole" type="ColorRect" parent="Background"]
+[node name="Lamp6Pole" type="ColorRect" parent="Background" index="88"]
 offset_left = 11789.0
 offset_top = -360.0
 offset_right = 11811.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp6Glow" type="ColorRect" parent="Background"]
+[node name="Lamp6Glow" type="ColorRect" parent="Background" index="89"]
 offset_left = 11730.0
 offset_top = -420.0
 offset_right = 11870.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp6Head" type="ColorRect" parent="Background"]
+[node name="Lamp6Head" type="ColorRect" parent="Background" index="90"]
 offset_left = 11758.0
 offset_top = -392.0
 offset_right = 11842.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
-[node name="Lamp7Pool" type="Polygon2D" parent="Background"]
+[node name="Lamp7Pool" type="Polygon2D" parent="Background" index="91"]
 position = Vector2(14200, 820)
-color = Color(1, 0.72, 0.34, 0.16)
-polygon = PackedVector2Array(230, 0, 163, 57, 0, 80, -163, 57, -230, 0, -163, -57, 0, -80, 163, -57)
+color = Color(1, 0.74, 0.36, 0.32)
+polygon = PackedVector2Array(320, 0, 226, 80, 0, 112, -226, 80, -320, 0, -226, -80, 0, -112, 226, -80)
 
-[node name="Lamp7Refl" type="ColorRect" parent="Background"]
+[node name="Lamp7Refl" type="ColorRect" parent="Background" index="92"]
 offset_left = 14187.0
 offset_top = 660.0
 offset_right = 14213.0
 offset_bottom = 1090.0
-color = Color(1, 0.7, 0.34, 0.12)
+color = Color(1, 0.72, 0.36, 0.24)
 
-[node name="Lamp7Pole" type="ColorRect" parent="Background"]
+[node name="Lamp7Pole" type="ColorRect" parent="Background" index="93"]
 offset_left = 14189.0
 offset_top = -360.0
 offset_right = 14211.0
 offset_bottom = 600.0
 color = Color(0.06, 0.06, 0.08, 1)
 
-[node name="Lamp7Glow" type="ColorRect" parent="Background"]
+[node name="Lamp7Glow" type="ColorRect" parent="Background" index="94"]
 offset_left = 14130.0
 offset_top = -420.0
 offset_right = 14270.0
 offset_bottom = -330.0
-color = Color(1, 0.7, 0.38, 0.28)
+color = Color(1, 0.72, 0.4, 0.5)
 
-[node name="Lamp7Head" type="ColorRect" parent="Background"]
+[node name="Lamp7Head" type="ColorRect" parent="Background" index="95"]
 offset_left = 14158.0
 offset_top = -392.0
 offset_right = 14242.0
 offset_bottom = -352.0
-color = Color(1, 0.78, 0.42, 1)
+color = Color(1, 0.88, 0.58, 1)
 
 [node name="Chad" parent="Level/Characters" index="0"]
 position = Vector2(824, 800)
@@ -901,30 +846,30 @@ position = Vector2(15208, 861)
 should_start_seated = true
 
 [node name="StreetBarricade" type="Node2D" parent="Level/Objects" index="0"]
-position = Vector2(10233, 790.5)
 y_sort_enabled = true
+position = Vector2(10233, 790.5)
 
-[node name="BarrierBody" type="Polygon2D" parent="Level/Objects/StreetBarricade"]
+[node name="BarrierBody" type="Polygon2D" parent="Level/Objects/StreetBarricade" index="0"]
 color = Color(0.18, 0.2, 0.24, 1)
 polygon = PackedVector2Array(-150, -90, 150, -90, 150, -40, -150, -40)
 
-[node name="BarrierTopRail" type="Polygon2D" parent="Level/Objects/StreetBarricade"]
+[node name="BarrierTopRail" type="Polygon2D" parent="Level/Objects/StreetBarricade" index="1"]
 color = Color(0.23, 0.25, 0.29, 1)
 polygon = PackedVector2Array(-152, -102, 152, -102, 152, -88, -152, -88)
 
-[node name="BarrierLegL" type="Polygon2D" parent="Level/Objects/StreetBarricade"]
+[node name="BarrierLegL" type="Polygon2D" parent="Level/Objects/StreetBarricade" index="2"]
 color = Color(0.14, 0.16, 0.2, 1)
 polygon = PackedVector2Array(-140, -40, -110, -40, -80, 12, -110, 12)
 
-[node name="BarrierLegR" type="Polygon2D" parent="Level/Objects/StreetBarricade"]
+[node name="BarrierLegR" type="Polygon2D" parent="Level/Objects/StreetBarricade" index="3"]
 color = Color(0.14, 0.16, 0.2, 1)
 polygon = PackedVector2Array(110, -40, 140, -40, 110, 12, 80, 12)
 
-[node name="StaticBody2d" type="StaticBody2D" parent="Level/Objects/StreetBarricade"]
+[node name="StaticBody2d" type="StaticBody2D" parent="Level/Objects/StreetBarricade" index="4"]
 collision_layer = 2
 collision_mask = 17
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Objects/StreetBarricade/StaticBody2d"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Objects/StreetBarricade/StaticBody2d" index="0"]
 position = Vector2(0, -71)
 shape = SubResource("RectangleShape2D_barc1")
 
@@ -989,22 +934,22 @@ position = Vector2(220, -56)
 shape = SubResource("RectangleShape2D_ajt63")
 metadata/collision_type = "world_hit_box"
 
-[node name="RainHaze1" type="Polygon2D" parent="Foreground"]
+[node name="RainHaze1" type="Polygon2D" parent="Foreground" index="0"]
 color = Color(0.6, 0.66, 0.78, 0.05)
 polygon = PackedVector2Array(-600, -500, 16600, -500, 16900, 1350, -300, 1350)
 
-[node name="RainHaze2" type="Polygon2D" parent="Foreground"]
+[node name="RainHaze2" type="Polygon2D" parent="Foreground" index="1"]
 color = Color(0.7, 0.76, 0.88, 0.04)
 polygon = PackedVector2Array(-200, -500, 17000, -500, 16600, 1350, -600, 1350)
 
-[node name="ForegroundPoleL" type="ColorRect" parent="Foreground"]
+[node name="ForegroundPoleL" type="ColorRect" parent="Foreground" index="2"]
 offset_left = 588.0
 offset_top = -260.0
 offset_right = 634.0
 offset_bottom = 900.0
 color = Color(0.02, 0.02, 0.05, 1)
 
-[node name="ForegroundPoleR" type="ColorRect" parent="Foreground"]
+[node name="ForegroundPoleR" type="ColorRect" parent="Foreground" index="3"]
 offset_left = 6610.0
 offset_top = -260.0
 offset_right = 6656.0
